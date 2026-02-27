@@ -60,8 +60,6 @@ I believe security is a team sport! 🛡️
 - **TryHackMe:** [not.nacho](https://tryhackme.com/p/not.nacho)
 - **Status:** Open to discussions about SOC Analyst or Security Engineer roles!
 
-<img src="https://tryhackme-badges.s3.amazonaws.com/not.nacho.png" alt="TryHackMe Badge" />
-
 [![](https://visitcount.itsvg.in/api?id=not-kami&icon=2&color=00ff00)](https://visitcount.itsvg.in)
 ---
 > **Disclaimer:** These are personal study notes and walkthroughs. I follow the TryHackMe "No Spoilers" policy by focusing on the *how* and the *why* rather than just giving answers.
