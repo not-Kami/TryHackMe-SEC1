@@ -119,6 +119,84 @@ Below is a handy reference for basic Linux commands and common shell operators. 
   file filename
   ```
 
+#### `nano`
+- **Description:** Simple command-line text editor.
+- **Example:**
+  ```bash
+  nano file.txt
+  ```
+
+#### `wget`
+- **Description:** Downloads files from the web via HTTP, HTTPS, or FTP.
+- **Example:**
+  ```bash
+  wget https://example.com/file.zip
+  ```
+
+#### `scp`
+- **Description:** Securely copies files between hosts on a network (SSH-based).
+- **Example:**
+  ```bash
+  scp file.txt user@remote:/path/
+  ```
+
+#### `python3 -m http.server`
+- **Description:** Quickly starts an HTTP server in the current directory (serves files).
+- **Example:**
+  ```bash
+  python3 -m http.server 8000
+  ```
+
+#### `ps`
+- **Description:** Lists current running processes.
+- **Example:**
+  ```bash
+  ps aux
+  ```
+
+#### `top`
+- **Description:** Displays real-time system and process information (like Task Manager).
+- **Example:**
+  ```bash
+  top
+  ```
+
+#### `kill`
+- **Description:** Sends signals to processes (commonly to terminate them).
+- **Examples:**
+  ```bash
+  kill <PID>           # Sends SIGTERM (default)
+  kill -9 <PID>        # Sends SIGKILL (force kill)
+  kill -19 <PID>       # Sends SIGSTOP (pause process)
+  ```
+
+#### Signals Overview
+- `SIGTERM` (15): Gracefully asks process to terminate (`kill <PID>`).
+- `SIGKILL` (9): Forcefully kills process (`kill -9 <PID>`).
+- `SIGSTOP` (19): Stops (pauses) process execution (`kill -19 <PID>`).
+
+#### `systemctl`
+- **Description:** Manages systemd services (start/stop/status/etc).
+- **Example:**
+  ```bash
+  systemctl status ssh
+  systemctl start nginx
+  systemctl stop apache2
+  systemctl enable mysql
+  systemctl disable <service>
+  ```
+
+#### `fg`
+- **Description:** Brings a backgrounded process to the foreground.
+- **Example:**
+  ```bash
+  fg
+  ```
+
+
+
+
+
 ---
 
 ### Shell Operators
