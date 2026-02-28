@@ -1,4 +1,4 @@
-# 🌐 Cyber Security 101 Journey (TryHackMe)
+# 🌐 Cyber Security 101 Journey
 
 ![Status](https://img.shields.io/badge/Status-Learning-blue)
 ![Pre-Sec](https://img.shields.io/badge/Pre--Security-Complete-green)
@@ -14,8 +14,19 @@ I'm documenting my transition into Cybersecurity, focusing on building a strong 
 ---
 
 ## 📁 Repository Structure
-- [Linux Fundamentals/](./Linux-Fundamentals/) — Notes & Command Cheat Sheet.
+- [Linux Fundamentals/](./Linux%20Fundamentals/) — Notes & command cheat sheet.
+- [Revisions/](./Revisions/) — Interactive quiz to review modules (one quiz per topic: Linux, then Windows, AD, Networking, etc.).
 - *Upcoming: Windows Fundamentals, Networking, and Defensive Security.*
+
+### Revisions — Install & run
+- **Required:** [Node.js](https://nodejs.org/) (v18+ recommended; includes npm).
+- **Install dependencies:** from the repo root, run  
+  `cd Revisions && npm install`
+- **Launch the quiz:**  
+  `npm run dev`  
+  Then open the URL shown in the terminal (e.g. `http://localhost:5173`) in your browser.
+- **Build for production:**  
+  `npm run build` → output in `Revisions/dist/`. Serve that folder with any static host.
 
 ---
 
