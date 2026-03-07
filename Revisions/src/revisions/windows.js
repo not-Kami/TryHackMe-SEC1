@@ -1,0 +1,348 @@
+// Correct answer: 0 = A, 1 = B, 2 = C, 3 = D
+// Windows & AD Fundamentals (TryHackMe) — Parts 1–4 + cheat sheet
+export const id = 'windows'
+export const title = 'Windows & AD Fundamentals'
+export const description = 'TryHackMe Windows & AD — GUI, NTFS, tools, security, Active Directory'
+
+export const questions = [
+  {
+    text: 'What does `lusrmgr.msc` open?',
+    options: [
+      'Local Users and Groups',
+      'Group Policy Management',
+      'Active Directory Users and Computers',
+      'System Configuration',
+    ],
+    correct: 0,
+    hint: 'Local Users and Groups — manage local accounts and groups.',
+  },
+  {
+    text: 'Which NTFS permission allows you to change permissions on a file or folder?',
+    options: ['Modify', 'Read & execute', 'Full control', 'Write'],
+    correct: 2,
+    hint: 'Full control includes changing permissions; Modify does not.',
+  },
+  {
+    text: 'Where are Group Policy Objects (GPOs) stored?',
+    options: [
+      'C:\\Windows\\System32',
+      'C:\\Windows\\SYSVOL\\sysvol\\',
+      'C:\\Users\\Public',
+      'The Registry only',
+    ],
+    correct: 1,
+    hint: 'SYSVOL share holds GPO definitions and is replicated between DCs.',
+  },
+  {
+    text: 'What does `gpupdate /force` do?',
+    options: [
+      'Forces a system reboot',
+      'Applies Group Policy immediately',
+      'Exports GPO report to HTML',
+      'Resets all GPOs to default',
+    ],
+    correct: 1,
+    hint: 'Normally GPO refresh is periodic (~90 min on workstations).',
+  },
+  {
+    text: 'Which tool opens the Group Policy Management Console?',
+    options: ['dsa.msc', 'gpmc.msc', 'compmgmt.msc', 'msconfig'],
+    correct: 1,
+    hint: 'gpmc.msc = Group Policy Management Console.',
+  },
+  {
+    text: 'With UAC enabled, even when logged in as Administrator, applications run by default with:',
+    options: [
+      'Full administrator rights',
+      'Limited (standard) rights until elevation',
+      'No network access',
+      'Read-only access to the system',
+    ],
+    correct: 1,
+    hint: 'UAC limits apps until you approve an elevation prompt.',
+  },
+  {
+    text: 'Which Windows Firewall profile should you use on a public Wi‑Fi (e.g. café, airport)?',
+    options: ['Domain', 'Private', 'Public', 'Guest'],
+    correct: 2,
+    hint: 'Public is the strictest; use it on untrusted networks.',
+  },
+  {
+    text: 'What does `dsa.msc` open?',
+    options: [
+      'Disk Management',
+      'Active Directory Users and Computers',
+      'Device Manager',
+      'System Configuration',
+    ],
+    correct: 1,
+    hint: 'DSA = Directory Service Administrator (AD users, computers, OUs).',
+  },
+  {
+    text: 'Which CMD command displays the computer name?',
+    options: ['whoami', 'hostname', 'ipconfig', 'systeminfo'],
+    correct: 1,
+    hint: 'hostname returns the computer name.',
+  },
+  {
+    text: 'In Active Directory, which authentication protocol uses tickets and does not send the password over the network?',
+    options: ['NTLM', 'Kerberos', 'LDAP', 'NetBIOS'],
+    correct: 1,
+    hint: 'Kerberos uses TGT and TGS tickets; NTLM is challenge–response.',
+  },
+  {
+    text: 'Organizational Units (OUs) are primarily used to:',
+    options: [
+      'Grant access to shared folders',
+      'Apply Group Policy Objects (GPOs)',
+      'Store user passwords',
+      'Define firewall rules',
+    ],
+    correct: 1,
+    hint: 'OUs are containers for applying GPOs; a user is in one OU.',
+  },
+  {
+    text: 'Security groups in AD are primarily used to:',
+    options: [
+      'Apply GPOs to users',
+      'Grant access to resources (files, printers)',
+      'Store shadow copies',
+      'Manage the Registry',
+    ],
+    correct: 1,
+    hint: 'Groups assign permissions; a user can be in many groups.',
+  },
+  {
+    text: 'When does Microsoft typically release non-urgent security updates (Patch Tuesday)?',
+    options: [
+      'First Monday of each month',
+      'Second Tuesday of each month',
+      'Last Friday of each month',
+      'Every other Wednesday',
+    ],
+    correct: 1,
+    hint: 'Patch Tuesday = 2nd Tuesday of the month.',
+  },
+  {
+    text: 'BitLocker full-disk encryption works best when used with:',
+    options: ['A USB key only', 'TPM (Trusted Platform Module)', 'SmartScreen', 'VSS'],
+    correct: 1,
+    hint: 'TPM stores keys and checks integrity at boot.',
+  },
+  {
+    text: 'Many ransomware variants run a command to delete shadow copies and prevent recovery. Which one?',
+    options: [
+      'gpupdate /force',
+      'vssadmin delete shadows',
+      'net user /delete',
+      'regedit /reset',
+    ],
+    correct: 1,
+    hint: 'vssadmin delete shadows removes Volume Shadow Copies.',
+  },
+  {
+    text: '"Living off the land" (LotL) refers to:',
+    options: [
+      'Using only cloud-based tools',
+      'Attackers using built-in Windows tools (PowerShell, cmd) to evade detection',
+      'Running Windows in Safe Mode',
+      'Using third-party antivirus only',
+    ],
+    correct: 1,
+    hint: 'Built-in tools are trusted and trigger fewer security alerts.',
+  },
+  {
+    text: 'Which CMD command shows full network configuration (IP, gateway, DNS)?',
+    options: ['ipconfig', 'ipconfig /all', 'netstat -an', 'ping'],
+    correct: 1,
+    hint: 'ipconfig /all shows detailed adapter and DNS info.',
+  },
+  {
+    text: 'Which tool provides Task Scheduler, Event Viewer, Disk Management, and Services in one console?',
+    options: ['msconfig', 'msinfo32', 'compmgmt.msc', 'lusrmgr.msc'],
+    correct: 2,
+    hint: 'compmgmt.msc = Computer Management.',
+  },
+  {
+    text: 'In Active Directory, the default and preferred authentication protocol is:',
+    options: ['NTLM', 'Kerberos', 'LDAP', 'NetBIOS'],
+    correct: 1,
+    hint: 'Kerberos is default; NTLM is legacy/compatibility.',
+  },
+  {
+    text: 'In AD, a Forest is best described as:',
+    options: [
+      'A single domain',
+      'The main security boundary; one or more trees',
+      'A single OU',
+      'A shared folder',
+    ],
+    correct: 1,
+    hint: 'Forest = one or more trees; top-level security boundary.',
+  },
+  {
+    text: 'What are NTFS Alternate Data Streams (ADS)?',
+    options: [
+      'Backup copies of files created by Windows',
+      'Extra data attached to a file, not shown in Explorer; can be used to hide data',
+      'Temporary files in System32',
+      'Cloud sync metadata',
+    ],
+    correct: 1,
+    hint: 'One file can have multiple streams; default is $DATA; used by malware to hide payloads.',
+  },
+  {
+    text: 'Which environment variable points to the Windows installation folder?',
+    options: ['%systemroot%', '%windir%', '%win%', '%os%'],
+    correct: 1,
+    hint: '%windir% typically = C:\\Windows',
+  },
+  {
+    text: 'What is the main difference between an Administrator and a Standard user account?',
+    options: [
+      'Administrator cannot change the desktop',
+      'Standard user cannot install software or change system-wide settings',
+      'Standard user has no profile folder',
+      'Administrator cannot use the network',
+    ],
+    correct: 1,
+    hint: 'Standard user is limited to own files and settings; principle of least privilege.',
+  },
+  {
+    text: 'What does msconfig allow you to configure?',
+    options: [
+      'Only the default browser',
+      'Startup type (Normal/Diagnostic/Selective), Boot (Safe Mode), Services, Tools',
+      'Only Windows Update',
+      'Only user passwords',
+    ],
+    correct: 1,
+    hint: 'System Configuration: General, Boot, Services (hide Microsoft to spot third-party), Tools.',
+  },
+  {
+    text: 'In Event Viewer, which log is most important for auditing logons and security events?',
+    options: ['Application', 'Security', 'System', 'Setup'],
+    correct: 1,
+    hint: 'Security log records logons, access, and other security-related events.',
+  },
+  {
+    text: 'Which tool opens the Event Viewer directly?',
+    options: ['eventview.msc', 'eventvwr.msc', 'events.msc', 'compmgmt.msc'],
+    correct: 1,
+    hint: 'eventvwr.msc = Event Viewer (Application, Security, System).',
+  },
+  {
+    text: 'What is the Windows Registry (regedit)?',
+    options: [
+      'A backup tool for files',
+      'A hierarchical database storing hardware, software, and user configuration',
+      'The list of installed programs only',
+      'The firewall rule database',
+    ],
+    correct: 1,
+    hint: 'Most GUI settings (Settings, Control Panel) are stored in the Registry.',
+  },
+  {
+    text: 'Which CMD command lists active network connections and listening ports?',
+    options: ['ipconfig -an', 'netstat -an', 'ping -list', 'net list'],
+    correct: 1,
+    hint: 'netstat -an shows connections; netstat -ano adds process ID (PID).',
+  },
+  {
+    text: 'Which CMD command shows help for a specific command (e.g. ipconfig)?',
+    options: ['help ipconfig', 'ipconfig --help', 'ipconfig /?', 'man ipconfig'],
+    correct: 2,
+    hint: 'In CMD, <command> /? shows help (e.g. ipconfig /?).',
+  },
+  {
+    text: 'Controlled Folder Access (Windows Defender) is mainly used to:',
+    options: [
+      'Block all internet access',
+      'Prevent unauthorized apps from modifying protected folders (e.g. Documents)',
+      'Encrypt the disk',
+      'Manage firewall rules',
+    ],
+    correct: 1,
+    hint: 'Anti-ransomware: blocks untrusted apps from changing protected folders.',
+  },
+  {
+    text: 'SmartScreen (App & browser control) does what?',
+    options: [
+      'Encrypts downloads',
+      'Checks sites and downloads against a reputation database; can block unrecognized apps',
+      'Manages Windows Update',
+      'Backs up the Registry',
+    ],
+    correct: 1,
+    hint: 'Reputation-based; blocks known-bad or unknown until user allows.',
+  },
+  {
+    text: 'Which tool opens the Windows Firewall with Advanced Security?',
+    options: ['firewall.msc', 'wf.msc', 'defender.msc', 'netfw.msc'],
+    correct: 1,
+    hint: 'wf.msc = Windows Firewall advanced interface (profiles: Domain, Private, Public).',
+  },
+  {
+    text: 'In Active Directory, computer accounts are identified by a suffix. Which one?',
+    options: ['#', '$', '@', '*'],
+    correct: 1,
+    hint: 'Computers are Name$; password is long random value, rotated by the system.',
+  },
+  {
+    text: 'Which AD group typically has full control over the domain and forest?',
+    options: ['Backup Operators', 'Domain Users', 'Domain Admins', 'Guests'],
+    correct: 2,
+    hint: 'Domain Admins = full control over the domain (and often the forest).',
+  },
+  {
+    text: 'In Group Policy, in what order are GPOs typically applied?',
+    options: [
+      'OU → Site → Domain',
+      'Domain → Site → OU',
+      'Site → OU → Domain',
+      'User → Computer',
+    ],
+    correct: 1,
+    hint: 'Domain first, then Site, then OU; later can override earlier.',
+  },
+  {
+    text: 'When is the "Computer configuration" part of a GPO applied?',
+    options: ['At user logon', 'At machine startup', 'Every hour', 'Only when gpupdate /force is run'],
+    correct: 1,
+    hint: 'Computer config at startup; User config at logon.',
+  },
+  {
+    text: 'Which PowerShell cmdlet (RSAT) forces a user to change their password at next logon?',
+    options: [
+      'Set-ADAccountPassword',
+      'Set-ADUser -Identity <user> -ChangePasswordAtLogon $true',
+      'Reset-ADPassword',
+      'Force-ADUserPassword',
+    ],
+    correct: 1,
+    hint: 'Set-ADUser -Identity <user> -ChangePasswordAtLogon $true',
+  },
+  {
+    text: 'What does gpresult /r show?',
+    options: [
+      'List of all GPOs on the domain',
+      'Resultant set of policies for the current user/computer',
+      'Registry backup',
+      'Firewall rules',
+    ],
+    correct: 1,
+    hint: 'gpresult /r = resultant policy; gpresult /h report.html exports to HTML.',
+  },
+  {
+    text: 'Which CMD command lists local user accounts?',
+    options: ['userlist', 'net user', 'whoami /users', 'get-users'],
+    correct: 1,
+    hint: 'net user lists accounts; net user <name> shows details for one user.',
+  },
+  {
+    text: 'Where are user profiles stored by default?',
+    options: ['C:\\Windows\\Users', 'C:\\Users\\<username>', 'C:\\Profiles', 'C:\\Documents and Settings'],
+    correct: 1,
+    hint: 'C:\\Users\\<user> — Desktop, Documents, Downloads, etc.',
+  },
+]

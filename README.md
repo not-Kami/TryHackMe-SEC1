@@ -34,7 +34,7 @@ I'm documenting my transition into Cybersecurity, focusing on building a strong 
 
 | | |
 |---|---|
-| **Path completion** | `[███----------------] 14%`  |
+| **Path completion** | `[█████---------------] 21%`  |
 | **Currently working on** | *Next: Windows & AD Fundamentals* |
 | **Last updated** | February 2026 |
 

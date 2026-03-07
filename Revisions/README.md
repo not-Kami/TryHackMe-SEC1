@@ -19,7 +19,8 @@ Then open the URL shown in the terminal (e.g. `http://localhost:5173`) in your b
 ## Structure
 - **`src/revisions/`** — One file per module:
   - `linux.js` — Linux Fundamentals (TryHackMe)
-  - *(later)* `windows.js`, `ad.js`, `networking.js`, etc.
+  - `windows.js` — Windows & AD Fundamentals (TryHackMe)
+  - *(later)* `networking.js`, etc.
 - **`src/revisions/index.js`** — Imports all revisions and exports a single `revisions` array. Add new modules here.
 
 ## Adding a new module (e.g. Windows)
