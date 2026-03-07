@@ -35,8 +35,8 @@ I'm documenting my transition into Cybersecurity, focusing on building a strong 
 | | |
 |---|---|
 | **Path completion** | `[█████---------------] 21%`  |
-| **Currently working on** | *Next: Windows & AD Fundamentals* |
-| **Last updated** | February 2026 |
+| **Currently working on** | *Command Line* |
+| **Last updated** | March 2026 |
 
 ---
 
@@ -44,8 +44,7 @@ I'm documenting my transition into Cybersecurity, focusing on building a strong 
 
 - [x] ✅ Start your Cyber Security Journey
 - [x] ✅ Linux Fundamentals
-- [ ] 🪟 Windows & AD Fundamentals
-- [ ] 💻 Command Line (PowerShell & Bash)
+- [x] 💻 Command Line (PowerShell & Bash)
 - [ ] 🌐 Networking (OSI Model, TCP/IP)
 - [ ] 🔐 Cryptography (Symmetric vs Asymmetric)
 - [ ] 💥 Exploitation Basics
