@@ -84,6 +84,7 @@ I believe security is a team sport! 🛡️
 ## 🔗 Connect with me
 - **TryHackMe:** [not.nacho](https://tryhackme.com/p/not.nacho)
 - **Status:** Open to discussions about SOC Analyst or Security Engineer roles!
+- **Support:** [☕ Buy Me a Coffee](https://buymeacoffee.com/nachofuerte)
 
 [![](https://visitcount.itsvg.in/api?id=not-kami&icon=2&color=00ff00)](https://visitcount.itsvg.in)
 ---

@@ -55,13 +55,24 @@ body {
 
 .subtitle {
   color: var(--text-muted);
+  margin-top: 0.25rem;
   margin-bottom: 1.5rem;
+}
+.start-container .start-header,
+.start-container .subtitle {
+  text-align: left;
+}
+
+.start-container {
+  max-width: 920px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 1rem;
 }
 
 .part-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
   gap: 1.5rem;
 }
 
@@ -73,6 +84,7 @@ body {
   color: var(--text);
   cursor: pointer;
   transition: color 0.15s;
+  min-width: 0;
 }
 
 .part-card:hover .part-card-frame {
@@ -92,7 +104,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 170px;
+  width: 100%;
   min-height: 200px;
   padding: 1rem;
   background: var(--surface);
@@ -143,6 +155,33 @@ body {
   box-shadow: 0 0 0 1px var(--primary);
 }
 
+/* Upcoming modules (greyed out, not clickable) */
+.part-card--upcoming {
+  cursor: not-allowed;
+}
+.part-card--upcoming .part-card-frame {
+  opacity: 0.65;
+  filter: grayscale(0.4);
+}
+.part-card--upcoming:hover .part-card-frame {
+  border-color: var(--border);
+  background: var(--surface);
+  box-shadow: none;
+}
+.part-card-coming {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  z-index: 1;
+}
+
 .part-card-img {
   width: 64px;
   height: 64px;
@@ -180,6 +219,47 @@ body {
 .part-card:hover .part-card-desc {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ----- Modules grid: mobile = 1 col, wide cards ----- */
+@media (max-width: 768px) {
+  .part-grid {
+    grid-template-columns: 1fr;
+    max-width: none;
+    padding: 0 0.5rem;
+  }
+  .part-card-frame {
+    flex-direction: row;
+    min-height: 80px;
+    padding: 0.75rem 1rem;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    text-align: left;
+  }
+  .part-card-img {
+    width: 48px;
+    height: 48px;
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+  .part-card-title {
+    margin-top: 0;
+    padding-top: 0;
+    flex: 1;
+    font-size: 0.95rem;
+  }
+  .part-card-best,
+  .part-card-badge,
+  .part-card-coming {
+    top: 0.5rem;
+  }
+  .part-card-best {
+    left: 0.5rem;
+  }
+  .part-card-desc {
+    display: none;
+  }
 }
 
 /* ----- Exit quiz (arrow to modules) ----- */
@@ -558,7 +638,10 @@ body {
 }
 
 /* ----- Title row: Revisions + info (i) ----- */
-.title-row {
+.start-header {
+  margin-bottom: 0;
+}
+.start-header .title-row {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -622,11 +705,45 @@ body {
   background: var(--bg);
 }
 
-.bottom-bar-github {
+.bottom-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   justify-self: start;
 }
 
-.bottom-bar-about {
+.bottom-bar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  color: var(--text-muted);
+  text-decoration: none;
+  overflow: hidden;
+  border: 2px solid var(--border);
+  background: var(--surface);
+  transition: border-color 0.15s, color 0.15s;
+}
+.bottom-bar-icon:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.bottom-bar-icon svg {
+  width: 2rem;
+  height: 2rem;
+  display: block;
+}
+.bottom-bar-pp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bottom-bar-about,
+.bottom-bar-bmc {
   justify-self: center;
 }
 
@@ -638,10 +755,6 @@ body {
 
 .bottom-bar-link:hover {
   color: var(--primary);
-}
-
-.bottom-bar-github svg {
-  display: block;
 }
 
 /* ----- About page ----- */
@@ -669,6 +782,17 @@ body {
 }
 
 .about-page .back:hover {
+  text-decoration: underline;
+}
+
+.about-page .about-links {
+  margin-bottom: 1rem;
+}
+.about-page .about-link {
+  color: var(--primary);
+  text-decoration: none;
+}
+.about-page .about-link:hover {
   text-decoration: underline;
 }
 

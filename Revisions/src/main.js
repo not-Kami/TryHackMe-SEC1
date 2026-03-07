@@ -72,9 +72,10 @@ function shuffle(arr) {
 const STORAGE_KEY = 'revisions-stats'
 const PASS_PCT = 80
 
-function getModuleImageUrl(id) {
+function getModuleImageUrl(id, imageFile) {
   try {
-    return new URL(`./img/${id}.png`, import.meta.url).href
+    const filename = imageFile || `${id}.png`
+    return new URL(`./img/${filename}`, import.meta.url).href
   } catch {
     return ''
   }
@@ -114,18 +115,23 @@ function exitQuiz() {
 function renderStart() {
   app.innerHTML = `
     <div class="screen start">
-      <h1 class="title-row">Revisions <span class="info-wrap" title="Contributions welcome"><span class="info-i" aria-hidden="true">i</span><span class="info-msg">Spotted an error? Feel free to open a PR.</span></span></h1>
-      <p class="subtitle">Choose a module to review.</p>
-      <div class="part-grid" id="part-grid">
+      <div class="start-container">
+        <header class="start-header">
+          <h1 class="title-row">Revisions <span class="info-wrap" title="Contributions welcome"><span class="info-i" aria-hidden="true">i</span><span class="info-msg">Spotted an error? Feel free to open a PR.</span></span></h1>
+        </header>
+        <p class="subtitle">Choose a module to review.</p>
+        <div class="part-grid" id="part-grid">
         ${revisions
           .map(
             (r) => {
-              const imgUrl = getModuleImageUrl(r.id)
-              const stats = getModuleStats(r.id)
+              const isUpcoming = r.upcoming === true
+              const imgUrl = getModuleImageUrl(r.id, r.image)
+              const stats = isUpcoming ? null : getModuleStats(r.id)
               return `
-          <button class="part-card" data-id="${r.id}" type="button">
+          <button class="part-card ${isUpcoming ? 'part-card--upcoming' : ''}" data-id="${r.id}" type="button" ${isUpcoming ? 'disabled' : ''} title="${isUpcoming ? 'Coming soon' : ''}">
             <span class="part-card-frame ${stats?.passed ? 'part-card-frame--passed' : ''} ${stats?.bestPct === 100 ? 'part-card-frame--perfect' : ''}">
-              ${stats ? `<span class="part-card-best" title="Best score">${stats.bestPct}%</span>` : ''}
+              ${!isUpcoming && stats ? `<span class="part-card-best" title="Best score">${stats.bestPct}%</span>` : ''}
+              ${isUpcoming ? '<span class="part-card-coming">Coming soon</span>' : ''}
               ${stats?.passed ? '<span class="part-card-badge" title="Passed">✓</span>' : ''}
               ${imgUrl ? `<img class="part-card-img" src="${imgUrl}" alt="" />` : ''}
               <span class="part-card-title">${escapeHtml(r.title)}</span>
@@ -136,6 +142,7 @@ function renderStart() {
             }
           )
           .join('')}
+        </div>
       </div>
     </div>
   `
@@ -143,6 +150,7 @@ function renderStart() {
   app.querySelectorAll('.part-card').forEach((btn) => {
     btn.addEventListener('click', () => {
       const rev = revisions.find((r) => r.id === btn.dataset.id)
+      if (rev.upcoming || !rev.questions || rev.questions.length === 0) return
       currentQuestions = shuffle(rev.questions)
       currentRevisionTitle = rev.title
       currentRevisionId = rev.id
