@@ -13,20 +13,35 @@ I'm documenting my transition into Cybersecurity, focusing on building a strong 
 
 ---
 
-## 📁 Repository Structure
-- [Linux Fundamentals/](./Linux%20Fundamentals/) — Notes & command cheat sheet.
-- [Revisions/](./Revisions/) — Interactive quiz to review modules (one quiz per topic: Linux, then Windows, AD, Networking, etc.).
-- *Upcoming: Windows Fundamentals, Networking, and Defensive Security.*
+## 📁 Repository structure
+
+```
+TryHackMe-SEC1/
+├── Notes/                              # Study notes per module
+│   ├── 1.Linux Fundamentals/
+│   │   ├── Summary.md
+│   │   └── cheat-sheet.md
+│   └── 2.Windows & AD Fundamentals/
+│       ├── Part1.md … Part4.md
+│       ├── Summary.md
+│       └── cheat-sheet.md
+│
+├── Revisions/                          # Interactive quiz app (Vite + vanilla JS)
+│   ├── src/ (main.js, main.css, img/, revisions/)
+│   ├── index.html, package.json
+│   └── README.md
+│
+└── README.md
+```
+
+- **Notes** — Un dossier par module, numéroté : `1.Linux Fundamentals`, `2.Windows & AD Fundamentals`, etc. (Summary, cheat-sheet, Part1–Part4 selon le module).
+- **Revisions** — App quiz : choix du module, QCM, score et badge « passed ». Un quiz par thème (Linux, Windows & AD ; d’autres à venir).
 
 ### Revisions — Install & run
-- **Required:** [Node.js](https://nodejs.org/) (v18+ recommended; includes npm).
-- **Install dependencies:** from the repo root, run  
-  `cd Revisions && npm install`
-- **Launch the quiz:**  
-  `npm run dev`  
-  Then open the URL shown in the terminal (e.g. `http://localhost:5173`) in your browser.
-- **Build for production:**  
-  `npm run build` → output in `Revisions/dist/`. Serve that folder with any static host.
+- **Requis :** [Node.js](https://nodejs.org/) (v18+).
+- **Install :** à la racine du repo → `cd Revisions && npm install`
+- **Lancer :** `npm run dev` puis ouvrir l’URL (ex. `http://localhost:5173`)
+- **Build :** `npm run build` → sortie dans `Revisions/dist/` (hébergement statique)
 
 ---
 
