@@ -58,8 +58,9 @@ TryHackMe-SEC1/
 ## 🗺️ Roadmap & Goals
 
 - [x] ✅ Start your Cyber Security Journey
-- [x] ✅ Linux Fundamentals
-- [x] 💻 Command Line (PowerShell & Bash)
+- [x] 🐧 Linux Fundamentals
+- [x] 🪟 Windows Fundamentals
+- [ ] 💻 Command Line (PowerShell & Bash)
 - [ ] 🌐 Networking (OSI Model, TCP/IP)
 - [ ] 🔐 Cryptography (Symmetric vs Asymmetric)
 - [ ] 💥 Exploitation Basics
