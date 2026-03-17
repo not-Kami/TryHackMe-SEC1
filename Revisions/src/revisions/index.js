@@ -2,11 +2,13 @@
 // Add a new revision by creating e.g. windows.js and importing it here.
 import { id as idLinux, title as titleLinux, description as descLinux, questions as qLinux } from './linux.js'
 import { id as idWindows, title as titleWindows, description as descWindows, questions as qWindows } from './windows.js'
+import {  id as idCommandLine,  title as titleCommandLine,  description as descCommandLine,  questions as qCommandLine,} from './commandline.js'
 
 // Active modules (with questions)
 const activeRevisions = [
   { id: idLinux, title: titleLinux, description: descLinux, questions: qLinux },
   { id: idWindows, title: titleWindows, description: descWindows, questions: qWindows },
+  {    id: idCommandLine,    title: titleCommandLine,    description: descCommandLine,    questions: qCommandLine,  },
 ]
 
 // Upcoming modules (greyed out, no quiz yet). Use `image` when filename differs from id (e.g. owasp.png, .svg).

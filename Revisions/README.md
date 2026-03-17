@@ -2,6 +2,8 @@
 
 One questionnaire **per module** (Linux, Windows, AD, Networking, etc.). Choose a module on the home screen, answer the questions, get feedback and a score.
 
+A simple onboarding is planned for first-time users.
+
 ## Requirements
 - **Node.js** (v18+ recommended), which includes npm.
 
