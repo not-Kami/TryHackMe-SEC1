@@ -265,5 +265,88 @@ export const questions = [
     correct: 1,
     hint: 'Switches limit collisions; routers limit broadcasts.',
   },
+
+  // ==== Core protocols (DNS/WHOIS/HTTP(S)/mail/SSH/FTP/SMB/NTP) ====
+  {
+    text: 'DNS primarily translates:',
+    options: ['MAC addresses into hostnames', 'Domain names into IP addresses', 'Ports into protocols', 'Routes into ACLs'],
+    correct: 1,
+    hint: 'DNS resolves names to IP addresses.',
+  },
+  {
+    text: 'Which DNS record type points to an alias (another hostname)?',
+    options: ['A', 'MX', 'CNAME', 'TXT'],
+    correct: 2,
+    hint: 'CNAME = canonical name (alias).',
+  },
+  {
+    text: 'WHOIS is mainly used to retrieve:',
+    options: [
+      'Real-time packet captures',
+      'Domain/IP registration and ownership metadata',
+      'TLS private keys',
+      'Switch MAC address tables',
+    ],
+    correct: 1,
+    hint: 'WHOIS is useful for OSINT metadata on domains/IP ranges.',
+  },
+  {
+    text: 'Which port is commonly used by HTTPS?',
+    options: ['80/TCP', '22/TCP', '443/TCP', '53/UDP'],
+    correct: 2,
+    hint: 'HTTPS runs on TCP 443.',
+  },
+  {
+    text: 'What does HTTPS add compared to plain HTTP?',
+    options: [
+      'Routing and NAT by default',
+      'TLS-based encryption, integrity, and server authentication',
+      'Guaranteed low latency',
+      'Automatic DNSSEC validation',
+    ],
+    correct: 1,
+    hint: 'HTTPS = HTTP over TLS.',
+  },
+  {
+    text: 'Which protocol is used to send email from client to mail server?',
+    options: ['IMAP', 'POP3', 'SMTP', 'SNMP'],
+    correct: 2,
+    hint: 'SMTP handles sending email.',
+  },
+  {
+    text: 'Which statement best describes IMAP vs POP3?',
+    options: [
+      'IMAP is only for sending email, POP3 is only for encryption',
+      'IMAP syncs mail on server across devices, POP3 is more download-oriented',
+      'POP3 always uses port 443 while IMAP uses port 80',
+      'They are the same protocol with different names',
+    ],
+    correct: 1,
+    hint: 'IMAP is multi-device sync; POP3 is typically download-first.',
+  },
+  {
+    text: 'SSH is most commonly associated with which TCP port?',
+    options: ['21', '22', '25', '445'],
+    correct: 1,
+    hint: 'SSH default port is TCP 22.',
+  },
+  {
+    text: 'Classic FTP control channel typically uses which TCP port?',
+    options: ['20', '21', '22', '110'],
+    correct: 1,
+    hint: 'FTP control channel is usually on 21.',
+  },
+  {
+    text: 'SMB file sharing is primarily associated with which TCP port in modern setups?',
+    options: ['123', '143', '389', '445'],
+    correct: 3,
+    hint: 'SMB over direct TCP is typically 445.',
+  },
+  {
+    text: 'NTP is used for clock synchronization and typically uses:',
+    options: ['UDP 123', 'TCP 123', 'UDP 161', 'TCP 53'],
+    correct: 0,
+    hint: 'NTP commonly runs on UDP 123.',
+  },
 ]
 
