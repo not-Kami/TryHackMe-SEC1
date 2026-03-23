@@ -532,6 +532,141 @@ body {
   padding-top: 1rem;
 }
 
+/* ----- Order (drag-less) questions ----- */
+.order-container {
+  margin-bottom: 0.5rem;
+}
+
+.order-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.order-item {
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.order-item:hover:not(:disabled) {
+  border-color: var(--primary);
+  background: rgba(88, 166, 255, 0.08);
+}
+
+.order-item:disabled {
+  cursor: default;
+  opacity: 0.8;
+}
+
+.order-slots {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.order-slot {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 2px dashed var(--border);
+  background: transparent;
+  padding: 0.75rem 0.75rem;
+}
+
+.order-slot--empty {
+  opacity: 0.8;
+}
+
+.order-slot-item {
+  display: inline-block;
+  color: var(--text);
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.order-slot-remove {
+  margin-left: 0.5rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 0.1rem 0.4rem;
+}
+
+.order-slot-remove:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.order-slot--correct {
+  border-style: solid;
+  border-color: var(--correct);
+  background: rgba(63, 185, 80, 0.10);
+}
+
+.order-slot--wrong {
+  border-style: solid;
+  border-color: var(--wrong);
+  background: rgba(248, 81, 73, 0.10);
+}
+
+.order-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+
+/* ----- CLI input questions ----- */
+.cli-input-line {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(26, 35, 50, 0.6);
+  margin-bottom: 1rem;
+}
+
+.cli-prompt,
+.cli-before,
+.cli-after {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.cli-input {
+  flex: 1;
+  min-width: 120px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  outline: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.95rem;
+}
+
+.cli-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.12);
+}
+
+.input-actions {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
 .btn-arrow {
   width: 2.75rem;
   height: 2.75rem;
@@ -647,6 +782,27 @@ body {
   gap: 0.35rem;
 }
 
+.reset-progress-btn {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 0.95rem;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.reset-progress-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
 .info-wrap {
   position: relative;
   display: inline-flex;
@@ -735,6 +891,140 @@ body {
   height: 2rem;
   display: block;
 }
+
+.bottom-bar-gear-wrap {
+  justify-self: end;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.bottom-bar-gear {
+  justify-self: end;
+  color: var(--text-muted);
+  text-decoration: none;
+  width: auto;
+  height: auto;
+  border: none;
+  background: transparent;
+  padding: 0.25rem 0.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s;
+  font-size: 1.1rem;
+}
+
+.bottom-bar-gear:hover {
+  color: var(--primary);
+}
+
+/* Reset menu (gear dropdown) */
+.reset-progress-menu {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 0.5rem);
+  min-width: 160px;
+  padding: 0.35rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  z-index: 200;
+}
+
+.reset-progress-menu-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.reset-progress-menu-item:hover {
+  background: rgba(88, 166, 255, 0.12);
+  color: var(--primary);
+}
+
+/* ----- My stats modal ----- */
+.stats-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.stats-modal {
+  width: 100%;
+  max-width: 640px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1rem 1.25rem;
+}
+
+.stats-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.stats-modal-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.stats-modal-close {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: 8px;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.stats-modal-close:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.stats-modal-subtitle {
+  margin: 0.5rem 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.stats-modal-table-wrap {
+  overflow: auto;
+}
+
+.stats-modal-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.stats-modal-table th,
+.stats-modal-table td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.stats-modal-table th {
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
 .bottom-bar-pp-img {
   width: 100%;
   height: 100%;
@@ -807,4 +1097,35 @@ body {
   width: 100%;
   min-height: 120px;
   border: none;
+}
+
+.about-social-link {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  text-align: left;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.about-github-inline-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  display: block;
+}
+
+.about-social-anchor {
+  word-break: break-word;
+}
+
+.about-bmc-link {
+  margin-top: 0.5rem;
+}
+
+.about-spotted-error {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  color: var(--text-muted);
+  font-style: italic;
 }

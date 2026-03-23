@@ -26,7 +26,7 @@ TryHackMe-SEC1/
 │       ├── Summary.md
 │       └── cheat-sheet.md
 │
-├── Revisions/                          # Interactive quiz app (Vite + vanilla JS)
+├── app/                          # Interactive quiz app (Vite + vanilla JS)
 │   ├── src/ (main.js, main.css, img/, revisions/)
 │   ├── index.html, package.json
 │   └── README.md
@@ -34,8 +34,9 @@ TryHackMe-SEC1/
 └── README.md
 ```
 
-- **Notes** — Un dossier par module, numéroté : `1.Linux Fundamentals`, `2.Windows & AD Fundamentals`, etc. (Summary, cheat-sheet, Part1–Part4 selon le module).
-- **Revisions** — App quiz : choix du module, QCM, score et badge « passed ». Un quiz par thème (Linux, Windows & AD ; d’autres à venir).
+- **Notes** — One folder per module, numbered: `1.Linux Fundamentals`, `2.Windows & AD Fundamentals`, `3.Command Line`, `4.Networking`, etc. (includes Summary, cheat-sheet, Part1–Part4 as needed per module; progression continuously updated).
+- **Revisions** — Interactive quiz app: select module, multiple choice questions, scoring, and "passed" badge. Quizzes available by topic (Linux, Windows & AD, Command Line, Networking; more coming soon).
+
 
 ### Revisions — Install & run
 - **Requis :** [Node.js](https://nodejs.org/) (v18+).
@@ -49,8 +50,8 @@ TryHackMe-SEC1/
 
 | | |
 |---|---|
-| **Path completion** | `[█████---------------] 21%`  |
-| **Currently working on** | *Command Line* |
+| **Path completion** | `[████████------------] 32%`  |
+| **Currently working on** | *Networking* |
 | **Last updated** | March 2026 |
 
 ---
@@ -60,7 +61,7 @@ TryHackMe-SEC1/
 - [x] ✅ Start your Cyber Security Journey
 - [x] 🐧 Linux Fundamentals
 - [x] 🪟 Windows Fundamentals
-- [ ] 💻 Command Line (PowerShell & Bash)
+- [x] 💻 Command Line (PowerShell & Bash)
 - [ ] 🌐 Networking (OSI Model, TCP/IP)
 - [ ] 🔐 Cryptography (Symmetric vs Asymmetric)
 - [ ] 💥 Exploitation Basics
