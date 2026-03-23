@@ -49,7 +49,7 @@ TryHackMe-SEC1/
 
 | | |
 |---|---|
-| **Path completion** | `[█████---------------] 21%`  |
+| **Path completion** | `[██████------------] 32%`  |
 | **Currently working on** | *Command Line* |
 | **Last updated** | March 2026 |
 
